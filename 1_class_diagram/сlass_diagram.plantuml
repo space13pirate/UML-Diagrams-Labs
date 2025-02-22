@@ -1,0 +1,70 @@
+@startuml class_diagram
+abstract class EmotionRecognition {
+  - _model
+  - _emotion_labels
+  + predict()
+}
+
+class FlaskApp {
+  - secret_key
+  - config
+  - routes
+  + route()
+  + run()
+  + render_template()
+  + flash()
+  + redirect()
+  + session()
+}
+
+class SpeechEmotionRecognition {
+  - _audio_model
+  + voice_recording(filename, duration)
+  + mel_spectrogram(y, sr)
+  + predict_emotion_from_file(filename)
+  + prediction_to_csv(predictions, filename)
+}
+
+class VideoEmotionRecognition {
+  - _video_model
+  - _face_detector
+  - _landmark_predictor
+  + gen()
+  + detect_face(frame)
+  + extract_face_features(faces)
+  + predict_emotion_from_frame(frame)
+}
+
+class DataHandler {
+  - data
+  + read_csv(filepath)
+  + to_csv(filepath)
+  + get_value_counts()
+  + get_mode()
+}
+
+class Visualization {
+  - chart
+  + create_chart()
+  + mark_line()
+  + encode()
+  + save_chart(filepath)
+}
+
+class StreamingResponse {
+  - stream
+  + stream_video()
+}
+
+FlaskApp --> SpeechEmotionRecognition : "uses"
+FlaskApp --> VideoEmotionRecognition : "uses"
+FlaskApp --> DataHandler : "manages data"
+FlaskApp --> StreamingResponse : "streams video"
+FlaskApp --> Visualization : "generates charts"
+
+SpeechEmotionRecognition --> DataHandler : "stores emotion data"
+VideoEmotionRecognition --> DataHandler : "stores emotion data"
+
+SpeechEmotionRecognition --|> EmotionRecognition
+VideoEmotionRecognition --|> EmotionRecognition
+@enduml
