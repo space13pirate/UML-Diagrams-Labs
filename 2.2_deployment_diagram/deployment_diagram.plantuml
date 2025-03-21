@@ -1,0 +1,30 @@
+@startuml deployment_diagram
+node "User Device" {
+    [Web Browser] <<Device>>
+}
+
+node "Web Server" {
+    [Flask Application] <<Artifact>>
+    [Emotion Recognition Library] <<Artifact>>
+    [Audio Processing Library] <<Artifact>>
+    [Video Processing Library] <<Artifact>>
+}
+
+node "Database Server" {
+    database "Video Emotions Database" as VideoDB
+    database "Audio Emotions Database" as AudioDB
+    database "Probability Data" as ProbabilityDB
+}
+
+[Web Browser] --> [Flask Application] : HTTP Requests
+[Flask Application] --> [Emotion Recognition Library] : API Calls
+[Flask Application] --> [Audio Processing Library] : Audio Analysis
+[Flask Application] --> [Video Processing Library] : Video Analysis
+
+[Emotion Recognition Library] --> VideoDB : Writes Data
+[Emotion Recognition Library] --> AudioDB : Writes Data
+[Emotion Recognition Library] --> ProbabilityDB : Generates Data
+
+[Audio Processing Library] --> AudioDB : Reads Data
+[Video Processing Library] --> VideoDB : Reads Data
+@enduml
