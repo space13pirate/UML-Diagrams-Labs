@@ -1,0 +1,31 @@
+@startuml activity_diagram
+|User|
+start
+
+:Select analysis mode;
+
+|System|
+
+if (Video or Audio?) then ([Video])
+    :Activate camera;
+    fork
+        :Display video\non the monitor;
+    fork again
+        :Detect key facial\nlandmarks in real time;
+        :Recognize emotions\non video in real time;
+    end fork
+else ([Audio])
+    :Activate microphone;
+    :Record audio data;
+    :Recognize emotions\non the audio recording;
+endif
+
+:End recording;
+
+|User|
+
+:View analysis results;
+
+stop
+
+@enduml
