@@ -8,6 +8,8 @@ All diagrams are generated using **PlantUML**, following best practices in softw
 ## :file_folder: Contents
 
 - :pushpin: [Class Diagram](1_class_diagram/) – object-oriented system structure
+- :building_construction: [Component Diagram](2.1_component_diagram/) – organization and dependencies of system components
+- :package: [Deployment Diagram](2.2_deployment_diagram/) – physical architecture of system deployment
 
 ## :hammer_and_wrench: Tools & Setup
 
