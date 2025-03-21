@@ -121,7 +121,7 @@ Handles the streaming of video frames.
 
 
 <p align="center">
-  <img src="https://github.com/space13pirate/UML-Diagrams-Labs/blob/main/1_class_diagram/class_diagram.png" alt="Class Diagram of the System" width="500"/>
+  <img src="https://github.com/space13pirate/UML-Diagrams-Labs/blob/main/1_class_diagram/class_diagram.png" alt="Class Diagram of the System" width="1000"/>
   <br>
   <em>Class Diagram of the System</em>
 </p>
