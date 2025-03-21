@@ -1,0 +1,49 @@
+@startuml component_diagram
+package "Web Application" {
+    [Flask Application] <<Component>>
+    [Emotion Recognition Library] <<Component>>
+    [Audio Processing Library] <<Component>>
+    [Video Processing Library] <<Component>>
+
+    database "Video Emotions Database" as VideoDB
+    database "Audio Emotions Database" as AudioDB
+    database "Probability Data" as ProbabilityDB
+
+    interface IWebInterface
+    note bottom of IWebInterface
+        - index()
+        - description()
+        - video()
+        - video_recording()
+        - video_dash()
+        - audio()
+        - audio_recording()
+        - audio_dash()
+    end note
+
+    [Flask Application] ..> IWebInterface : implements
+    [Flask Application] ..> [Emotion Recognition Library] : uses
+    [Flask Application] ..> [Audio Processing Library] : uses
+    [Flask Application] ..> [Video Processing Library] : uses
+
+    [Emotion Recognition Library] --> VideoDB : writes data
+    [Emotion Recognition Library] --> AudioDB : writes data
+    [Emotion Recognition Library] --> ProbabilityDB : generates data
+
+    [Audio Processing Library] --> AudioDB : reads data
+    [Video Processing Library] --> VideoDB : reads data
+
+    [Emotion Recognition Library] --> [Flask Application] : returns results
+}
+
+package "User Interface" {
+    interface IUserActions
+    note top of IUserActions
+        - Start Video Analysis
+        - Start Audio Analysis
+        - View Results
+    end note
+
+    IUserActions ..> [Flask Application] : interacts
+}
+@enduml
