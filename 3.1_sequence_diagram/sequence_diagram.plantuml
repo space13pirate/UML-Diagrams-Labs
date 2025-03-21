@@ -1,0 +1,28 @@
+@startuml sequence_diagram
+participant User
+participant WebApp
+participant "Video Module" as VideoModule
+participant "Audio Module" as AudioModule
+participant "Analysis Module" as AnalysisModule
+participant Database
+
+== Video Analysis Request ==
+User -> WebApp: Request video analysis
+WebApp -> VideoModule: Start video recording
+VideoModule --> WebApp: Video recorded
+WebApp -> AnalysisModule: Analyze video
+AnalysisModule -> Database: Retrieve emotion data
+Database --> AnalysisModule: Emotion data
+AnalysisModule --> WebApp: Analysis result
+WebApp --> User: Display results
+
+== Audio Analysis Request ==
+User -> WebApp: Request audio analysis
+WebApp -> AudioModule: Start audio recording
+AudioModule --> WebApp: Audio recorded
+WebApp -> AnalysisModule: Analyze audio
+AnalysisModule -> Database: Retrieve emotion data
+Database --> AnalysisModule: Emotion data
+AnalysisModule --> WebApp: Analysis result
+WebApp --> User: Display results
+@enduml
