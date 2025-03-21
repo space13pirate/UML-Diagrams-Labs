@@ -1,0 +1,26 @@
+@startuml use_case_diagram
+left to right direction
+actor User as u
+rectangle "Web application for emotion recognition" {
+    usecase "Select analysis mode (video/audio)" as mode
+    usecase "Start video recording" as video
+    usecase "Start audio recording" as audio
+    usecase "View emotion analysis results" as viewResults
+    usecase "Save emotion analysis results" as saveResults
+    usecase "View web service description" as webService
+
+    u --> mode
+    u --> video
+    u --> audio
+
+    mode <.. video : <<include>>
+    mode <.. audio : <<include>>
+
+    u --> viewResults
+    u --> saveResults
+
+    viewResults <.. saveResults : <<extend>>
+
+    u --> webService
+}
+@enduml
