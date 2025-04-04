@@ -1,0 +1,24 @@
+@startuml state_machine_diagram
+
+[*] --> Home
+
+state Home {
+  [*] --> Idle
+  Idle --> Description : Go to /description
+  Idle --> VideoInit : POST /video
+  Idle --> AudioInit : POST /audio
+}
+
+state VideoInit {
+  VideoInit --> VideoRecording : POST /video_recording
+  VideoRecording --> VideoDashboard : GET /video_dash
+  VideoDashboard --> Idle : Return Home
+}
+
+state AudioInit {
+  AudioInit --> AudioRecording : POST /audio_recording
+  AudioRecording --> AudioDashboard : GET /audio_dash
+  AudioDashboard --> Idle : Return Home
+}
+
+@enduml
