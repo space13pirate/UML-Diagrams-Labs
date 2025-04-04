@@ -45,7 +45,7 @@ This sequence outlines the flow for analyzing emotions using audio data.
 ## :mag: Sequence Diagram Representation
 
 <p align="center">
-  <img src="https://github.com/space13pirate/UML-Diagrams-Labs/blob/main/3.1_sequence_diagram/sequence_diagram.png" alt="Sequence Diagram of the System" width="1000"/>
+  <img src="https://github.com/space13pirate/UML-Diagrams-Labs/blob/main/3.3_sequence_diagram/sequence_diagram.png" alt="Sequence Diagram of the System" width="1000"/>
   <br>
   <em>Sequence Diagram of the System</em>
 </p>

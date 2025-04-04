@@ -49,7 +49,7 @@ It includes:
 ## :mag: Use Case Diagram Representation
 
 <p align="center">
-  <img src="https://github.com/space13pirate/UML-Diagrams-Labs/blob/main/3.3_use_case_diagram/use_case_diagram.png" alt="Use Case Diagram of the System" width="1000"/>
+  <img src="https://github.com/space13pirate/UML-Diagrams-Labs/blob/main/3.1_use_case_diagram/use_case_diagram.png" alt="Use Case Diagram of the System" width="1000"/>
   <br>
   <em>Use Case Diagram of the System</em>
 </p>

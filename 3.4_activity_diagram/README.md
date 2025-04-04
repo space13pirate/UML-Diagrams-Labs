@@ -42,7 +42,7 @@ Once the recording is completed, the **System** provides the analysis results to
 ## :mag: Activity Diagram Representation
 
 <p align="center">
-  <img src="https://github.com/space13pirate/UML-Diagrams-Labs/blob/main/3.2_activity_diagram/activity_diagram.png" alt="Activity Diagram of the System" width="1000"/>
+  <img src="https://github.com/space13pirate/UML-Diagrams-Labs/blob/main/3.4_activity_diagram/activity_diagram.png" alt="Activity Diagram of the System" width="1000"/>
   <br>
   <em>Activity Diagram of the System</em>
 </p>

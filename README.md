@@ -10,9 +10,9 @@ All diagrams are generated using **PlantUML**, following best practices in softw
 - :pushpin: [Class Diagram](1_class_diagram/) – object-oriented system structure
 - :building_construction: [Component Diagram](2.1_component_diagram/) – organization and dependencies of system components
 - :package: [Deployment Diagram](2.2_deployment_diagram/) – physical architecture of system deployment
-- :film_strip: [Sequence Diagram](3.1_sequence_diagram/) – dynamic behavior and interactions
-- :arrow_forward: [Activity Diagram](3.2_activity_diagram/) – flow of activities within the system
-- :bust_in_silhouette: [Use Case Diagram](3.3_use_case_diagram/) – user interactions with the system
+- :bust_in_silhouette: [Use Case Diagram](3.1_use_case_diagram/) – user interactions with the system
+- :film_strip: [Sequence Diagram](3.3_sequence_diagram/) – dynamic behavior and interactions
+- :arrow_forward: [Activity Diagram](3.4_activity_diagram/) – flow of activities within the system
 
 ## :hammer_and_wrench: Tools & Setup
 
