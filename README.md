@@ -1,9 +1,14 @@
 <div id="header" align="center">
-  <h1>UML-Diagrams-Labs</h1>
+  <h1>UML Diagrams & Design Patterns Labs</h1>
 </div>
 
-This repository contains UML diagrams created as part of the **Software and Systems Engineering Course**.  
+This repository contains UML diagrams and design pattern implementations created as part of the **Software and Systems Engineering Course**.  
 All diagrams are generated using **PlantUML**, following best practices in software design and modeling.
+
+The purpose of this repository is to demonstrate proficiency in various **UML diagram types** (class, component, deployment, use case, state machine, sequence, and activity diagrams) and apply them to real-world software systems.
+
+Additionally, it includes a fully integrated **lab project on design patterns**, showing how five classic patterns can be implemented and visualized in a cohesive Python-based system.
+
 
 ## :file_folder: Contents
 
@@ -14,12 +19,28 @@ All diagrams are generated using **PlantUML**, following best practices in softw
 - :gear: [State Machine Diagram](3.2_state_machine_diagram/) – system states and transitions
 - :film_strip: [Sequence Diagram](3.3_sequence_diagram/) – dynamic behavior and interactions
 - :arrow_forward: [Activity Diagram](3.4_activity_diagram/) – flow of activities within the system
+- :arrow_forward: [Activity Diagram](3.4_activity_diagram/) – flow of activities within the system
+
+- :office: [Smart Home Patterns](smart_home_patterns/) – Python implementation of 5 design patterns (Singleton, Factory Method, Facade, Observer, State) with UML diagrams
+
+
+## :triangular_ruler: Design Patterns Lab: Smart Home
+
+The folder [`smart_home_patterns/`](smart_home_patterns/) contains a complete lab assignment demonstrating **5 classic design patterns** implemented in Python and visualized using PlantUML:
+
+- `Singleton` – SmartHomeHub as a global controller  
+- `Factory Method` – dynamic creation of smart devices  
+- `Facade` – high-level interface for smart home control  
+- `Observer` – sensor-event notification system  
+- `State` – internal state switching for smart light
+
 
 ## :hammer_and_wrench: Tools & Setup
 
 - **PlantUML** for UML diagram generation  
 - **Markdown & Git** for documentation and version control  
 - **VS Code** with PlantUML plugins  
+
 
 ### :pen: Repository author
 
