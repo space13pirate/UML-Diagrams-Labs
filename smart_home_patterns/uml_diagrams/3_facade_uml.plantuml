@@ -1,0 +1,21 @@
+@startuml FacadeUML
+
+class HomeController {
+    +leave_home()
+    +arrive_home()
+    -hub : SmartHomeHub
+}
+
+class SmartHomeHub {
+    +broadcast(message)
+}
+
+HomeController --> SmartHomeHub : uses
+
+note right of HomeController
+Facade pattern:
+- Simplifies subsystem control
+- Provides high-level interface
+end note
+
+@enduml

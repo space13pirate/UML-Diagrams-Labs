@@ -1,0 +1,27 @@
+@startuml ObserverUML
+
+abstract class Observer {
+    +update()
+}
+
+class AlarmSystem
+class AutoLight
+
+Observer <|-- AlarmSystem
+Observer <|-- AutoLight
+
+class MotionSensor {
+    +attach(observer)
+    +detect_motion()
+    -_observers
+}
+
+MotionSensor --> Observer : notifies
+
+note right of MotionSensor
+Observer pattern:
+- MotionSensor is subject
+- Observers react to state changes
+end note
+
+@enduml

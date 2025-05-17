@@ -1,0 +1,62 @@
+@startuml GeneralUML
+
+class SmartHomeHub {
+    +register_device(device)
+    +broadcast(message)
+    _instance
+    devices
+}
+
+class DeviceFactory {
+    +create_device(device_type)
+}
+
+abstract class SmartDevice {
+    +receive(message)
+}
+
+SmartDevice <|-- SmartLight
+SmartDevice <|-- SmartThermostat
+SmartDevice <|-- SmartCamera
+SmartDevice <|-- SmartDoorLock
+
+SmartHomeHub --> SmartDevice : register_device()
+DeviceFactory --> SmartDevice : create_device()
+
+class HomeController {
+    +leave_home()
+    +arrive_home()
+    -hub : SmartHomeHub
+}
+
+HomeController --> SmartHomeHub
+
+class MotionSensor {
+    +attach(observer)
+    +detect_motion()
+    -_observers
+}
+
+abstract class Observer {
+    +update()
+}
+
+Observer <|-- AlarmSystem
+Observer <|-- AutoLight
+
+MotionSensor --> Observer : attach(), update()
+
+class LightContext {
+    +press_button()
+    -state : LightState
+}
+
+abstract class LightState {
+    +toggle(context)
+}
+
+LightState <|-- LightOn
+LightState <|-- LightOff
+LightContext --> LightState : state.toggle()
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml SingletonUML
+
+class SmartHomeHub {
+    +register_device(device)
+    +broadcast(message)
+    _instance
+    devices
+    __new__()
+}
+
+note right of SmartHomeHub
+Singleton pattern:
+- Only one instance exists
+- Global point of access
+end note
+
+@enduml

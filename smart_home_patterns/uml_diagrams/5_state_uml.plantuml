@@ -1,0 +1,26 @@
+@startuml StateUML
+
+abstract class LightState {
+    +toggle(context)
+}
+
+class LightOn
+class LightOff
+
+LightState <|-- LightOn
+LightState <|-- LightOff
+
+class LightContext {
+    +press_button()
+    -state : LightState
+}
+
+LightContext --> LightState : delegates
+
+note right of LightContext
+State pattern:
+- Encapsulates state-dependent behavior
+- Context delegates to state
+end note
+
+@enduml

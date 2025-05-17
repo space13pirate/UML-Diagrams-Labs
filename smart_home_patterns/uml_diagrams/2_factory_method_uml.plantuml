@@ -1,0 +1,29 @@
+@startuml FactoryMethodUML
+
+abstract class SmartDevice {
+    +receive(message)
+}
+
+class SmartLight
+class SmartThermostat
+class SmartCamera
+class SmartDoorLock
+
+SmartDevice <|-- SmartLight
+SmartDevice <|-- SmartThermostat
+SmartDevice <|-- SmartCamera
+SmartDevice <|-- SmartDoorLock
+
+class DeviceFactory {
+    +create_device(device_type)
+}
+
+DeviceFactory --> SmartDevice : returns
+
+note right of DeviceFactory
+Factory Method pattern:
+- Encapsulates object creation
+- Returns SmartDevice subclass
+end note
+
+@enduml
